@@ -1,7 +1,13 @@
 {
   "files": [],
+  "compilerOptions": {
+    "types": ["vue"]  
+  },
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "vueCompilerOptions": {
+    "globalTypesPath": "./src/vite-env.d.ts"
+  }
 }
