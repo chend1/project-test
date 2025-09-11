@@ -12,6 +12,11 @@ const routes: RouteRecordRaw[] = [
     name: 'Login',
     component: () => import('../views/login/login.vue'),
   },
+  {
+    path: '/snapdom',
+    name: 'Snapdom',
+    component: () => import('../views/snapdom/snapdom.vue'),
+  },
 ]
 
 const router = createRouter({

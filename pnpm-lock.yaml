@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@zumer/snapdom':
+        specifier: ^1.9.9
+        version: 1.9.9
       vue:
         specifier: ^3.5.17
         version: 3.5.20(typescript@5.8.3)
@@ -403,6 +406,9 @@ packages:
         optional: true
       vue:
         optional: true
+
+  '@zumer/snapdom@1.9.9':
+    resolution: {integrity: sha512-tBqAdoq1lTJp5cozENtW9H5ZxEpJfagka99dOd7O5j+VbTDWANvPiJsgPLlJMFXUUfyxeL17JFYB2RzM2XxqPg==}
 
   alien-signals@1.0.13:
     resolution: {integrity: sha512-OGj9yyTnJEttvzhTUWuscOvtqxq5vrhF7vL9oS0xJ2mK0ItPYP1/y+vCFebfxoEyAz0++1AIwJ5CMr+Fk3nDmg==}
@@ -885,6 +891,8 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
       vue: 3.5.20(typescript@5.8.3)
+
+  '@zumer/snapdom@1.9.9': {}
 
   alien-signals@1.0.13: {}
 
