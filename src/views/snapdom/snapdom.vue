@@ -35,6 +35,8 @@ const handlePrint = async () => {
         <button @click="handlePrint">打印</button>
       </div>
     </div>
+    
+    <router-view></router-view>
   </div>
 </template>
 
