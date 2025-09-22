@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@element-plus/icons-vue':
+        specifier: ^2.3.2
+        version: 2.3.2(vue@3.5.20(typescript@5.8.3))
       '@zumer/snapdom':
         specifier: ^1.9.9
         version: 1.9.9
       element-plus:
         specifier: ^2.11.2
         version: 2.11.2(vue@3.5.20(typescript@5.8.3))
+      normalize.css:
+        specifier: ^8.0.1
+        version: 8.0.1
       vue:
         specifier: ^3.5.17
         version: 3.5.20(typescript@5.8.3)
@@ -585,6 +591,9 @@ packages:
 
   normalize-wheel-es@1.2.0:
     resolution: {integrity: sha512-Wj7+EJQ8mSuXr2iWfnujrimU35R2W4FAErEyTmJoJ7ucwTn2hOUSsRehMb5RSYkxXGTM7Y9QpvPmp++w5ftoJw==}
+
+  normalize.css@8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
 
   parse-node-version@1.0.1:
     resolution: {integrity: sha512-3YHlOa/JgH6Mnpr05jP9eDG254US9ek25LyIxZlDItp2iJtwyaXQb57lBYLdT3MowkUFYEV2XXNAYIPlESvJlA==}
@@ -1183,6 +1192,8 @@ snapshots:
     optional: true
 
   normalize-wheel-es@1.2.0: {}
+
+  normalize.css@8.0.1: {}
 
   parse-node-version@1.0.1: {}
 
