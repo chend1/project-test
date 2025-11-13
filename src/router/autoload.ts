@@ -1,16 +1,17 @@
 // src/router/autoload.ts
 import type { RouteRecordRaw } from 'vue-router'
 
-const mapName : Record<string, string> = {
-  'Home': '首页',
-  'About': '关于',
-  'Login': '登录',
-  'Register': '注册',
-  'Snapdom': 'snapdom测试',
-  'Power': '权限管理',
-  'PowerAccountManage': '账户管理',
-  'PowerMenuManage': '菜单管理',
-  'TextGradient': '文字滚动变色',
+const mapName: Record<string, string> = {
+  Home: '首页',
+  About: '关于',
+  Login: '登录',
+  Register: '注册',
+  Snapdom: 'snapdom测试',
+  Power: '权限管理',
+  PowerAccountManage: '账户管理',
+  PowerMenuManage: '菜单管理',
+  TextGradient: '文字滚动变色',
+  TextLine: '文字下划线动画',
 }
 
 /**

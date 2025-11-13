@@ -10,7 +10,7 @@ const handlePrint = async () => {
       scale: 2,
     })
     await result.download({ format: 'jpg', filename: '测试图片' })
-    console.log(result)
+    // console.log(result)
   }
 }
 </script>
@@ -22,7 +22,8 @@ const handlePrint = async () => {
       <div class="left" ref="printRef">
         <div class="name">测试内容</div>
         <div class="img">
-          <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt="" />
+          <img src="../../assets/vue.svg" alt="" />
+          <!-- <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt="" /> -->
         </div>
         <!-- <img src="" alt=""> -->
         <div class="text">
@@ -33,6 +34,7 @@ const handlePrint = async () => {
         <button @click="handlePrint">打印</button>
       </div>
     </div>
+    <div class="canvas"></div>
     <router-view></router-view>
   </div>
 </template>
@@ -68,7 +70,7 @@ const handlePrint = async () => {
         left: 0;
         width: 100%;
         height: 100%;
-        color: #fff;
+        color: #ff0000;
         padding: 10px;
         box-sizing: border-box;
       }
