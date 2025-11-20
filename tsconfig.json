@@ -1,12 +1,16 @@
 {
   "files": [],
   "compilerOptions": {
-    "types": ["vue", "element-plus"]  
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "moduleResolution": "Node",
+    "strict": true,
+    "types": ["vue", "element-plus"],
+    "lib": ["es2017", "dom"]
   },
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "vueCompilerOptions": {
     "globalTypesPath": "./src/vite-env.d.ts"
   }
