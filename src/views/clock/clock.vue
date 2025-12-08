@@ -20,13 +20,10 @@ const initTime = () => {
       if (i === 0 && num === 2) {
         backNum = 0
       }
-      // if (i === 1 && num === 3) {
-      //   backNum = 0
-      // }
       if ((i === 3 || i === 6) && num === 5) {
         backNum = 0
       }
-      let item: ClockType = {
+      const item: ClockType = {
         type: 'time',
         frontNum,
         backNum,
@@ -55,23 +52,12 @@ setInterval(() => {
   initTime()
 }, 1000)
 initTime()
-
-const testNum = ref({
-  frontNum: 0,
-  backNum: 1,
-  isAnimation: true,
-})
-const nextAnimation = () => {
-  testNum.value.isAnimation = true
-  setTimeout(() => {})
-}
 </script>
 
 <template>
   <div class="clock">
     <div class="title">
       <span>时钟</span>
-      <button @click="nextAnimation">向下翻</button>
     </div>
     <div class="cnt">
       <div class="time">
@@ -86,14 +72,6 @@ const nextAnimation = () => {
           </div>
           <div class="em" v-if="item.type === 'em'"></div>
         </template>
-        <!-- <div class="time-item animation">
-          <div class="front" :class="`num${testNum.frontNum}`"></div>
-          <div class="back" :class="`num${testNum.backNum}`"></div>
-        </div>
-        <div class="time-item">
-          <div class="front num1"></div>
-          <div class="back num2"></div>
-        </div> -->
       </div>
     </div>
   </div>

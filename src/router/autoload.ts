@@ -12,6 +12,7 @@ const mapName: Record<string, string> = {
   PowerMenuManage: '菜单管理',
   TextGradient: '文字滚动变色',
   TextLine: '文字下划线动画',
+  Clock: '翻页时钟',
 }
 
 /**

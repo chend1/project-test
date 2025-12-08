@@ -7,8 +7,9 @@
     },
     "moduleResolution": "Node",
     "strict": true,
-    "types": ["vue", "element-plus"],
-    "lib": ["es2017", "dom"]
+    "types": ["vue", "element-plus", "vite/client"],
+    "module": "esnext",
+    "lib": ["es2020", "dom"]
   },
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "vueCompilerOptions": {
