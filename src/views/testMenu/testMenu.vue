@@ -4,29 +4,20 @@ import { ref } from 'vue'
 const menuList = ref([
   {
     name: '菜单1',
-    action: () => {
-      console.log('菜单1')
-    },
+    params: '{}',
+    method: () => console.log('菜单1'),
     children: [
       {
         name: '菜单1菜单1',
-        action: () => {
-          console.log('菜单1菜单1')
-        },
-      },
-      {
-        name: '菜单1菜单2',
-        action: () => {
-          console.log('菜单1菜单2')
-        },
+        params: '{}',
+        method: () => console.log('菜单1菜单1'),
       },
     ],
   },
   {
     name: '菜单2',
-    action: () => {
-      console.log('菜单2')
-    },
+    params: '{}',
+    method: () => console.log('菜单2'),
   },
 ])
 </script>

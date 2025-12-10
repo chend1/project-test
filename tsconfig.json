@@ -1,18 +1,17 @@
 {
   "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "compilerOptions": {
+    "composite": true,
+    "moduleResolution": "Node",
+    "strict": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM"],
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
     },
-    "moduleResolution": "Node",
-    "strict": true,
-    "types": ["vue", "element-plus", "vite/client"],
-    "module": "esnext",
-    "lib": ["es2020", "dom"]
-  },
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
-  "vueCompilerOptions": {
-    "globalTypesPath": "./src/vite-env.d.ts"
+    "types": ["vite/client"]
   }
 }
