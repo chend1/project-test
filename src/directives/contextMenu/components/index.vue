@@ -40,27 +40,29 @@ watch(
       const width = window.innerWidth
       const height = window.innerHeight
 
-      const clientWidth = menuRef.value?.clientWidth ?? 0
-      const clientHeight = menuRef.value?.clientHeight ?? 0
+      // 获取
+      const menuEl = menuRef.value?.querySelector('.menu-list')
+      const clientWidth = menuEl?.clientWidth ?? 0
+      const clientHeight = menuEl?.clientHeight ?? 0
 
       // 水平方向检查
       if (width - position.x < clientWidth) {
         position.x -= clientWidth
-        direction.left = false
-        direction.right = true
-      } else {
         direction.left = true
         direction.right = false
+      } else {
+        direction.left = false
+        direction.right = true
       }
 
       // 垂直方向检查
       if (height - position.y < clientHeight) {
         position.y -= clientHeight
-        direction.top = false
-        direction.bottom = true
-      } else {
         direction.top = true
         direction.bottom = false
+      } else {
+        direction.top = false
+        direction.bottom = true
       }
 
       newPosition.value = position
@@ -80,8 +82,6 @@ const emit = defineEmits<{
 
 /** 关闭菜单 */
 const closeMenu = () => {
-  console.log('关闭菜单')
-
   emit('close')
 }
 
@@ -121,5 +121,8 @@ onBeforeUnmount(() => {
   left: 0;
   background-color: #fff;
   z-index: 9900;
+  .list {
+    position: relative;
+  }
 }
 </style>

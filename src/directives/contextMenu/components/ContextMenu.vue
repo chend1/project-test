@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import type { MenuGroupType, MenuItemType } from '../types'
+import type { MenuGroupType, MenuItemType, DirectionType } from '../types'
 
 const props = defineProps<{
   menuList: MenuGroupType[]
   theme?: 'light' | 'dark'
+  direction: DirectionType
 }>()
 
 /** emit 类型 */
@@ -18,8 +19,19 @@ const menuClick = (menu: MenuItemType) => {
 </script>
 
 <template>
-  <div class="menu-list" :class="props.theme">
-    <div class="menu-item" v-for="(item, index) in props.menuList" :key="'menu-' + index">
+  <div
+    class="menu-list"
+    :class="[
+      theme,
+      {
+        'menu-list-left': direction.left,
+        'menu-list-right': direction.right,
+        'menu-list-top': direction.top,
+        'menu-list-bottom': direction.bottom,
+      },
+    ]"
+  >
+    <div class="menu-item" v-for="(item, index) in menuList" :key="'menu-' + index">
       <ul>
         <template v-for="menu in item.children" :key="menu.name">
           <li
@@ -34,6 +46,7 @@ const menuClick = (menu: MenuItemType) => {
             <ContextMenu
               v-if="menu.children?.length"
               :menu-list="menu.children"
+              :direction="direction"
               @close="emit('close')"
             />
           </li>
@@ -56,9 +69,11 @@ const menuClick = (menu: MenuItemType) => {
   --hover-bg-color: #ececec;
 }
 .menu-list {
-  position: relative;
+  position: absolute;
   min-width: 80px;
   max-width: 300px;
+  max-height: 100vh;
+  // overflow-y: scroll;
   background-color: var(--bg-color);
   box-shadow: 1px 1px 5px #ccc;
   border-radius: 5px;
@@ -66,6 +81,7 @@ const menuClick = (menu: MenuItemType) => {
   padding: 2px;
   color: var(--color);
   user-select: none;
+  z-index: 9911;
   .menu-item {
     border-bottom: 1px solid var(--border-color);
     width: 100%;
@@ -117,7 +133,8 @@ const menuClick = (menu: MenuItemType) => {
         &:hover {
           background-color: var(--hover-bg-color);
           & > .menu-list {
-            visibility: visible;
+            // visibility: visible;
+            display: block;
             opacity: 1;
           }
         }
@@ -125,13 +142,31 @@ const menuClick = (menu: MenuItemType) => {
     }
   }
   .menu-list {
-    position: absolute;
-    z-index: 9911;
-    top: -2px;
-    left: calc(100% - 2px);
-    visibility: none;
+    // transition-delay: 0.35s;
+    display: none;
     opacity: 0;
-    transition-delay: 0.35s;
   }
+  .menu-list-left {
+    right: calc(100% - 2px);
+  }
+  .menu-list-right {
+    left: calc(100%);
+  }
+  .menu-list-top {
+    bottom: -1px;
+  }
+  .menu-list-bottom {
+    top: -2px;
+  }
+}
+
+.menu-list.dark.menu-list-right,
+.menu-list.light.menu-list-right {
+  left: 100%;
+}
+
+.menu-list.dark.menu-list-left,
+.menu-list.light.menu-list-left {
+  left: 0;
 }
 </style>

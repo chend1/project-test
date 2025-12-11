@@ -11,8 +11,6 @@ export const vContextMenu: Directive<HTMLElement, MenuGroupItem[]> = {
       e.preventDefault()
       const menuList = binding.value
       const newMenu = transformMenu(menuList)
-      console.log('newMenu', newMenu)
-
       // 创建 VNode
       const vnode: VNode = h(contentMenu, {
         position: {

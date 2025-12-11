@@ -12,6 +12,28 @@ const menuList = ref([
         params: '{}',
         method: () => console.log('菜单1菜单1'),
       },
+      {
+        name: '菜单1菜单2',
+        params: '{}',
+        method: () => console.log('菜单1菜单1'),
+      },
+      {
+        name: '菜单1菜单3',
+        params: '{}',
+        method: () => console.log('菜单1菜单1'),
+        children: [
+          {
+            name: '菜单1菜单3-1',
+            params: '{}',
+            method: () => console.log('菜单1菜单3-1'),
+          },
+          {
+            name: '菜单1菜单3-2',
+            params: '{}',
+            method: () => console.log('菜单1菜单3-2'),
+          },
+        ],
+      },
     ],
   },
   {
@@ -24,8 +46,24 @@ const menuList = ref([
 
 <template>
   <div class="text-menu">
-    <ul>
-      <li v-context-menu="menuList">测试右键菜单</li>
+    <ul v-context-menu="menuList">
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
+      <li>测试右键菜单</li>
       <li>测试右键菜单</li>
       <li>测试右键菜单</li>
       <li>测试右键菜单</li>
